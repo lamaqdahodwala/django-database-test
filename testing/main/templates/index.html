@@ -2,4 +2,9 @@
 
 {% block content %}  
     <h1 class="title">Make post</h1>
+    <form action="/newpost" method='POST'>
+        {% crsf_token %}
+        <small class="is-small">Body</small>
+        <textarea name="" id="body" cols="30" rows="10" class='textarea' placeholder="Post Body"></textarea>
+    </form>
 {% endblock %}
