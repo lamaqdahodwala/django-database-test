@@ -1,10 +1,14 @@
 {% extends 'base.html' %} 
 
 {% block content %}  
-    <h1 class="title">Make post</h1>
-    <form action="/newpost" method='POST'>
-        {% crsf_token %}
-        <small class="is-small">Body</small>
-        <textarea name="" id="body" cols="30" rows="10" class='textarea' placeholder="Post Body"></textarea>
-    </form>
+    <div class="container">
+        <br><br>
+        <h1 class="title">Make post</h1>
+        <form action="/newpost" method='POST'>
+            {% csrf_token %}
+            <small class="is-small">Body</small>
+            <textarea name="body" id="body" cols="30" rows="10" class='textarea' placeholder="Post Body"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 {% endblock %}
