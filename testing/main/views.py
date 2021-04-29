@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Post
 from .forms import PostModelForm
 from django.http import HttpResponse
 
@@ -15,3 +16,7 @@ def newpost(req):
             return HttpResponse("Your post was submitted")
         return HttpResponse("Your post is invalid")
     return redirect(req, 'index.html')
+
+def viewposts(req):
+    objs = Post.objects.all()
+    return render(req, "posts.html", {"posts": objs})    

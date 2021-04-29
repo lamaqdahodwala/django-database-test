@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+    {% for i in posts %} 
+        <div class="card">
+            <div class="card-header">
+                {{ i.title }}
+            </div>
+            <div class="card-content">
+                <p class="content">{{ i.body }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
